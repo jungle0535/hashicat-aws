@@ -192,3 +192,9 @@ resource aws_key_pair "hashicat" {
   key_name   = local.private_key_filename
   public_key = tls_private_key.hashicat.public_key_openssh
 }
+
+
+module "vpc" {
+  source  = "app.terraform.io/erinhung-training/vpc/aws"
+  version = "2.44.0"
+}
